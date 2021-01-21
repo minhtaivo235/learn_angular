@@ -7,6 +7,7 @@ import { Component } from '@angular/core';
 })
 export class WordComponent {
     statusShow = false;
+    filterStatus = 'XEM_TAT_CA';
     word = {        
         en: '',
         vn: ''
@@ -38,5 +39,11 @@ export class WordComponent {
     handleDelete(id:number) {
         const index = this.arrWords.findIndex(word => word.id === id);
         this.arrWords.splice(index,1);
+    }
+    getFilterWord(memorize: boolean) {
+        const XEM_TAT_CA = this.filterStatus == 'XEM_TAT_CA';
+        const XEM_DA_NHO = this.filterStatus == 'XEM_DA_NHO' && memorize;
+        const XEM_CHUA_NHO = this.filterStatus == 'XEM_CHUA_NHO' && !memorize;
+        return XEM_TAT_CA || XEM_DA_NHO || XEM_CHUA_NHO;
     }
 }

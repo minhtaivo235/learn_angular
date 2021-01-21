@@ -5,11 +5,18 @@
 </div>
 
 <button (click)="handleAddWord()">Thêm từ mới</button>
+<br><br>
+<select [(ngModel)]="filterStatus">
+    <option value="XEM_TAT_CA">Xem tất cả</option>
+    <option value="XEM_DA_NHO">Xem từ đã nhớ</option>
+    <option value="XEM_CHUA_NHO">Xem từ chưa nhớ</option>
+</select>
 
-<div *ngFor="let word of arrWords; let i = index">
-    <h4 [ngStyle]="{color: word.memorize ? 'yellow' : 'red'}">{{ word.en }}</h4>
-    <p>{{ word.vn }}</p>
-    <p>{{ i }}</p>
-    <button (click)="handleDelete(word.id)">Xóa</button>
+<div *ngFor="let word of arrWords;">
+    <div *ngIf="getFilterWord(word.memorize)">
+        <h4 [ngStyle]="{color: word.memorize ? 'yellow' : 'red'}">{{ word.en }}</h4>
+        <p>{{ word.vn }}</p>    
+        <button (click)="handleDelete(word.id)">Xóa</button>
+    </div>
     <!-- <button (click)="handleDelete(i)">Xóa</button> -->
 </div>
