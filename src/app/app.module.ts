@@ -13,6 +13,7 @@ import { ParentComponent} from './parent.component';
 import { ChildComponent} from './child.component';
 import { ChildViewComponent } from './childView.component';
 import { ParentViewComponent } from './parentView.component';
+import { CardComponent } from './card.component';
 
 
 @NgModule({
@@ -26,7 +27,8 @@ import { ParentViewComponent } from './parentView.component';
     ParentComponent,
     ChildComponent,
     ChildViewComponent,
-    ParentViewComponent
+    ParentViewComponent,
+    CardComponent
 
   ],
   imports: [
