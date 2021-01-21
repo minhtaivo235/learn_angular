@@ -1,0 +1,22 @@
+// add bootstrap
+    1. npm install bootstrap jquery --save
+    2. them link bootstrap css vao styles
+    3. them link jquery vao scripts
+// property binding
+    [ property ] = "value"   
+// event binding
+    (event) = "function()"
+// two way binding
+    1. import FormsModule trong app.module
+    2. them FormsModule trong @Ngmodule -> imports
+    3. su dung [(ngModel)]="value"
+// Style binding
+    [style.propperty] = "value" 
+    [style.color] = "'yellow'"
+// Class binding
+    [class] = "'className'"
+    [class.className]="value"
+// build-in Directive
+    [ngStyle]="property:'value',..." or object
+    [ngClass]="className:'boolean',..." or object
+

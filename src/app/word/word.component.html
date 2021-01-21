@@ -1,0 +1,15 @@
+
+<div *ngIf="statusShow">
+    <input type="text" placeholder="English" [(ngModel)]="word.en">
+    <input type="text" placeholder="Vietnamese" [(ngModel)]="word.vn">
+</div>
+
+<button (click)="handleAddWord()">Thêm từ mới</button>
+
+<div *ngFor="let word of arrWords; let i = index">
+    <h4 [ngStyle]="{color: word.memorize ? 'yellow' : 'red'}">{{ word.en }}</h4>
+    <p>{{ word.vn }}</p>
+    <p>{{ i }}</p>
+    <button (click)="handleDelete(word.id)">Xóa</button>
+    <!-- <button (click)="handleDelete(i)">Xóa</button> -->
+</div>
